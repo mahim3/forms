@@ -1,0 +1,15 @@
+<!-- <div class="container">
+<app-reactive></app-reactive>
+</div> -->
+<div style="text-align:center">
+    <h1 #myheader>
+        Routing Application
+    </h1>
+</div>
+<nav>
+    <a routerLink="/form" routerLinkActive="active">FormComponent</a>
+    <a routerLink="form/{{slug}}/{{ab}}" routerLinkActive="active">LoginComponent</a>
+</nav>
+
+<app-child *ngFor="let item of category" [element]="item"></app-child>
+<router-outlet></router-outlet>

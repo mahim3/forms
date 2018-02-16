@@ -1,0 +1,21 @@
+<form [formGroup]="rForm" >
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" formControlName="title" #title/>
+    <div class="alert alert-danger" *ngIf="!rForm.controls['title'].valid && rForm.controls['title'].touched ">
+     {{titleErrorMessage}}
+    </div>
+    <button (click)=submitDetails(title)> click me</button>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" formControlName="description" />
+  </div>
+  <div class="form-group">
+    <label>Category</label>
+    <select class="form-control" formControlName="categories">
+      <option *ngFor="let item of categories" value="{{item.id}}">{{item.name}}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">submit</button>
+</form>
