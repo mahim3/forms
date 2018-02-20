@@ -11,6 +11,8 @@ import { ReactiveComponent } from './reactive/reactive.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { Http, Response, RequestOptions, Headers, HttpModule} from '@angular/http';
+import { Auth0Service } from './services/auth0.service';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 
 // import { LoginComponent } from './login/login.component';
@@ -33,7 +35,12 @@ import { Http, Response, RequestOptions, Headers, HttpModule} from '@angular/htt
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [AuthGuard,AuthService],
+  providers: [
+    AuthGuard,
+    AuthService,
+    Auth0Service,
+    AUTH_PROVIDERS
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

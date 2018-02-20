@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ElementRef } from '@angular/core'
 import { ViewChild } from '@angular/core';
+import { Auth0Service } from './services/auth0.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent {
 
 category= [{id:1, name: 'Engineering'},{id:2, name: 'Medical'}];
 
-constructor(){
+constructor(private auth:Auth0Service){
   console.log(this.headerElement);
 }
 }
