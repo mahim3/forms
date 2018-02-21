@@ -2,7 +2,8 @@
 <app-reactive></app-reactive>
 </div> -->
 <div class="text-align:right">
-<button (click)="auth.login()">Login</button>
+<button class="btn btn-margin" *ngIf="!auth.authenticated()" (click)="auth.login()">Login</button>
+<button class="btn btn-margin" *ngIf="auth.authenticated()" (click)="auth.logout()"> Log Out </button>
 </div>
 <div style="text-align:center">
     <h1 #myheader>
